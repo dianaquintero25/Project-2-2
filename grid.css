@@ -1,0 +1,40 @@
+*{
+    
+    margin:0px;
+    padding: 5px;
+    box-sizing: border-box;
+    
+}
+
+
+
+body {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: "header header"
+                         "intro faq"
+                         "articles faq"
+                         "footer footer";
+    grid-column-gap: 15px;
+}
+
+body > header {
+    grid-row: 1;
+    grid-column: 1/-1;
+}
+
+body > article {grid-area: intro;}
+body > aside {grid-area: faq;}
+body > section {grid-area: articles;}
+body > footer {grid-area: footer;}
+
+/* Grid Styles for Nested Grid */
+
+section > h1 {
+    grid-area: 1/1/2/3:
+}
+
+body > footer {
+    grid-row: 3;
+    grid-column: 3/-1;
+}
